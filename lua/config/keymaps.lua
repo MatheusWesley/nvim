@@ -7,16 +7,16 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true }) -- Desabilit
 -- Aqui estou definindo a variavel opts local para alterar alguns atahos padrões
 local opts = { noremap = true, silent = true }
 
--- Salvar arquivo com Ctrl + S
+-- Salvar arquivo com Ctrl + s
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", opts) -- Salvar arquivo
 
--- Sair do arquivo com Ctrl + Q
+-- Sair do arquivo com Ctrl + q
 vim.keymap.set("n", "<C-q>", "<cmd>q<CR>", opts) -- Sair do arquivo
 
 -- Deletar um único caractere sem copiar para o registrador
 vim.keymap.set("n", "x", '"_x', opts) -- Apaga o caractere sem copiar para o registrador
 
--- Navegar entre buffers
+-- Manipulação de buffers
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts) -- Próximo buffer
 vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts) -- Buffer anterior
 vim.keymap.set("n", "<C-x>", ":bdelete!<CR>", opts) -- Fecha buffer - (Ctrl + x)

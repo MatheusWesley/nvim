@@ -1,10 +1,10 @@
--- NOTE: Neste arquivo ficará todos os meus keymaps personalizados
+-- NOTE:
+-- Neste arquivo ficará todos os meus keymaps personalizados
 
 -- Desabilitar o comportamento padrão da tecla espaço nos modos Normal e Visual
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true }) -- Desabilita a tecla espaço
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
--- Opções gerais para concisão (noremap = true e silent = true)
--- Aqui estou definindo a variavel opts local para alterar alguns atahos padrões
+-- Definição da variável opts que permite alterar os atalhos localmente
 local opts = { noremap = true, silent = true }
 
 -- Salvar arquivo com Ctrl + s
@@ -14,9 +14,9 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", opts) -- Salvar arquivo
 vim.keymap.set("n", "<C-q>", "<cmd>q<CR>", opts) -- Sair do arquivo
 
 -- Deletar um único caractere sem copiar para o registrador
-vim.keymap.set("n", "x", '"_x', opts) -- Apaga o caractere sem copiar para o registrador
+vim.keymap.set("n", "x", '"_x', opts)
 
--- Manipulação de buffers
+-- Manipulação de buffers (abas)
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts) -- Próximo buffer
 vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts) -- Buffer anterior
 vim.keymap.set("n", "<C-x>", ":bdelete!<CR>", opts) -- Fecha buffer - (Ctrl + x)

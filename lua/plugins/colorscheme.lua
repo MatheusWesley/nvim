@@ -1,3 +1,6 @@
+-- NOTE:
+-- Neste arquivo ficará configurado os esquemas de cores
+
 return {
   {
     "craftzdog/solarized-osaka.nvim",
@@ -11,8 +14,8 @@ return {
     end,
   },
   {
-    "rose-pine/neovim", -- Nome do plugin Rose Pine
-    name = "rose-pine", -- Nome personalizado (opcional)
+    "rose-pine/neovim",
+    name = "rose-pine",
     lazy = false, -- Certifica que o tema será carregado imediatamente
     priority = 1000, -- Define prioridade para garantir que o tema carregue antes
     config = function()
@@ -20,7 +23,7 @@ return {
       require("rose-pine").setup({
         variant = "auto", -- auto, main, moon, or dawn
         dark_variant = "main", -- main, moon, or dawn
-        dim_inactive_windows = false,
+        dim_inactive_windows = true,
         extend_background_behind_borders = true,
 
         enable = {
@@ -32,7 +35,7 @@ return {
         styles = {
           bold = true,
           italic = true,
-          transparency = false,
+          transparency = true,
         },
 
         groups = {
@@ -65,38 +68,23 @@ return {
           h5 = "pine",
           h6 = "foam",
         },
-
-        palette = {
-          -- Override the builtin palette per variant
-          -- moon = {
-          --     base = '#18191a',
-          --     overlay = '#363738',
-          -- },
-        },
-
         highlight_groups = {
-          -- Comment = { fg = "foam" },
-          -- VertSplit = { fg = "muted", bg = "muted" },
+          CursorLineNr = { fg = "rose", bold = true },
         },
 
         before_highlight = function(group, highlight, palette)
           -- Disable all undercurls
-          -- if highlight.undercurl then
-          --     highlight.undercurl = false
-          -- end
-          --
+          if highlight.undercurl then
+            highlight.undercurl = false
+          end
           -- Change palette colour
-          -- if highlight.fg == palette.pine then
-          --     highlight.fg = palette.foam
-          -- end
+          if highlight.fg == palette.pine then
+            highlight.fg = palette.foam
+          end
         end,
       })
-
-      -- Ativa o esquema de cores Rose Pine
-      -- vim.cmd("colorscheme rose-pine")
-      -- vim.cmd("colorscheme rose-pine-main")
-      -- vim.cmd("colorscheme rose-pine-moon")
-      -- vim.cmd("colorscheme rose-pine-dawn")
+      -- Ativa o tema
+      vim.cmd("colorscheme rose-pine-moon")
     end,
   },
 }

@@ -21,6 +21,9 @@ return {
         "sql",
         "svelte",
         "vue",
+        "javascript",
+        "typescript",
+        "lua",
       },
 
       -- matchup = {

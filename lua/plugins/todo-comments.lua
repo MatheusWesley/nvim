@@ -14,7 +14,7 @@ return {
           color = "error", -- Pode ser uma cor hex como "#DC2626" ou um nome de cor definido, como "error"
           alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- Lista de aliases para FIX
         },
-        TODO = { icon = "", color = "info", alt = { "FAZER", "IDEA" } },
+        TODO = { icon = "", color = "info", alt = { "FAZER", "IDEA", "INFO" } },
         HACK = { icon = "󰈸", color = "warning" },
         WARN = { icon = "", color = "warning", alt = { "WARNING", "XXX" } },
         PERF = { icon = "", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },

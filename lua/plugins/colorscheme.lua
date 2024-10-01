@@ -35,7 +35,7 @@ return {
         styles = {
           bold = true,
           italic = true,
-          transparency = true,
+          transparency = false,
         },
 
         groups = {
@@ -84,7 +84,65 @@ return {
         end,
       })
       -- Ativa o tema
-      vim.cmd("colorscheme rose-pine-moon")
+      -- vim.cmd("colorscheme rose-pine-moon")
+    end,
+  },
+  {
+    "catppuccin/nvim",
+    lazy = false,
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "auto", -- latte, frappe, macchiato, mocha
+        background = { -- :h background
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = false, -- desativa a configuração da cor de fundo.
+        show_end_of_buffer = false, -- exibe os caracteres '~' após o final dos buffers
+        term_colors = false, -- define as cores do terminal (por exemplo, `g:terminal_color_0`)
+        dim_inactive = {
+          enabled = true, -- atenua a cor de fundo da janela inativa
+          shade = "dark",
+          percentage = 0.15, -- porcentagem da sombra a ser aplicada à janela inativa
+        },
+        no_italic = false, -- força a desativação do itálico
+        no_bold = false, -- força a desativação do negrito
+        no_underline = false, -- força a desativação do sublinhado
+        styles = { -- Manipula os estilos dos grupos de destaque gerais (veja `:h highlight-args`):
+          comments = { "italic" }, -- Altera o estilo dos comentários
+          conditionals = { "italic" },
+          loops = {},
+          functions = {},
+          keywords = {},
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+          operators = {},
+          -- miscs = {}, -- Descomente para desativar estilos codificados
+        },
+        color_overrides = {},
+        default_integrations = true,
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          nvimtree = true,
+          treesitter = true,
+          notify = false,
+          mini = {
+            enabled = true,
+            indentscope_color = "",
+          },
+          -- Para mais integrações de plugins, por favor, role para baixo (https://github.com/catppuccin/nvim#integrations)
+        },
+      })
+
+      -- a configuração deve ser chamada antes de carregar
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }

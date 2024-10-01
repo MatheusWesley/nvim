@@ -52,3 +52,21 @@ vim.keymap.set("v", ">", ">gv", opts) -- Reindentar para a direita mantendo a se
 
 -- Manter o último conteúdo copiado ao colar (sem sobrescrever o registrador)
 vim.keymap.set("v", "p", '"_dP', opts) -- Cola sem substituir o conteúdo copiado
+
+-- Runners
+
+-- Executar um arquivo com node.js (espaço + rn)
+vim.keymap.set(
+  "n",
+  "<leader>rn",
+  "<Esc>:w<CR>:!node %<CR>",
+  { desc = " Run with node", noremap = true, silent = true }
+)
+
+-- Executar um arquivo lua (espaço + rl)
+vim.keymap.set(
+  "n",
+  "<leader>rl",
+  "<Esc>:w<CR>:luafile %<CR>",
+  { desc = " Run with .lua", noremap = true, silent = true }
+)

@@ -17,7 +17,7 @@ return {
       close_on_exit = true,
       float_opts = {
         border = "curved", -- Borda do terminal flutuante: 'single', 'double', 'shadow', 'curved'
-        winblend = 1, -- Transparência da janela
+        winblend = 5, -- Transparência da janela
       },
     },
   },

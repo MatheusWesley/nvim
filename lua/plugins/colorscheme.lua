@@ -35,7 +35,7 @@ return {
         styles = {
           bold = true,
           italic = true,
-          transparency = false,
+          transparency = true,
         },
 
         groups = {
@@ -99,13 +99,13 @@ return {
           light = "latte",
           dark = "mocha",
         },
-        transparent_background = false, -- desativa a configuração da cor de fundo.
+        transparent_background = true, -- deixa o plano de fundo transparente
         show_end_of_buffer = false, -- exibe os caracteres '~' após o final dos buffers
         term_colors = false, -- define as cores do terminal (por exemplo, `g:terminal_color_0`)
         dim_inactive = {
-          enabled = true, -- atenua a cor de fundo da janela inativa
+          enabled = false, -- atenua a cor de fundo da janela inativa
           shade = "dark",
-          percentage = 0.15, -- porcentagem da sombra a ser aplicada à janela inativa
+          percentage = 0.40, -- porcentagem da sombra a ser aplicada à janela inativa
         },
         no_italic = false, -- força a desativação do itálico
         no_bold = false, -- força a desativação do negrito
@@ -132,7 +132,7 @@ return {
           gitsigns = true,
           nvimtree = true,
           treesitter = true,
-          notify = false,
+          notify = true,
           mini = {
             enabled = true,
             indentscope_color = "",
@@ -141,7 +141,7 @@ return {
         },
       })
 
-      -- a configuração deve ser chamada antes de carregar
+      -- carregando o tema
       vim.cmd.colorscheme("catppuccin")
     end,
   },

@@ -14,6 +14,15 @@ return {
     end,
   },
   {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      dim_inactive = true,
+    },
+  },
+  {
     "rose-pine/neovim",
     name = "rose-pine",
     lazy = false, -- Certifica que o tema será carregado imediatamente
@@ -23,7 +32,7 @@ return {
       require("rose-pine").setup({
         variant = "auto", -- auto, main, moon, or dawn
         dark_variant = "main", -- main, moon, or dawn
-        dim_inactive_windows = true,
+        dim_inactive_windows = false,
         extend_background_behind_borders = true,
 
         enable = {
@@ -83,8 +92,6 @@ return {
           end
         end,
       })
-      -- Ativa o tema
-      -- vim.cmd("colorscheme rose-pine-moon")
     end,
   },
   {
@@ -101,7 +108,7 @@ return {
         },
         transparent_background = true, -- deixa o plano de fundo transparente
         show_end_of_buffer = false, -- exibe os caracteres '~' após o final dos buffers
-        term_colors = false, -- define as cores do terminal (por exemplo, `g:terminal_color_0`)
+        term_colors = true, -- define as cores do terminal (por exemplo, `g:terminal_color_0`)
         dim_inactive = {
           enabled = false, -- atenua a cor de fundo da janela inativa
           shade = "dark",
@@ -140,9 +147,6 @@ return {
           -- Para mais integrações de plugins, por favor, role para baixo (https://github.com/catppuccin/nvim#integrations)
         },
       })
-
-      -- carregando o tema
-      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }

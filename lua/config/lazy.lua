@@ -35,8 +35,8 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        -- Escolher o esquema de cores (atualmente comentado)
-        -- colorscheme = "solarized-osaka",
+        -- Escolher o esquema de cores
+        colorscheme = "catppuccin",
       },
     },
     -- Importar/alternar com seus próprios plugins

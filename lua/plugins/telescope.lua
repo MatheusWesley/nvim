@@ -127,6 +127,11 @@ return {
             preview_cutoff = 9999, -- Define o corte de pré-visualização
           },
         },
+        buffers = {
+          theme = "ivy",
+          initial_mode = "normal",
+          previewer = false,
+        },
       }
       opts.extensions = { -- Configurações de extensões do Telescope
         file_browser = {
